@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Game/GameUI.gd" type="Script" id=1]
+[ext_resource path="res://Images/Background.png" type="Texture" id=2]
+
+[node name="BackgroundGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background Top" type="ColorRect" parent="."]
+margin_left = -30.8167
+margin_top = -16.1032
+margin_right = 669.183
+margin_bottom = 383.897
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+color = Color( 0.803922, 0.870588, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_top = 10.0
+margin_right = 1.0
+margin_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HoleNumber" type="Label" parent="Control"]
+margin_left = 204.683
+margin_top = 5.0
+margin_right = 267.683
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.0156863, 0.0117647, 0.0823529, 1 )
+text = "Hole: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Control"]
+margin_left = 384.683
+margin_top = 5.0
+margin_right = 468.683
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.0156863, 0.0117647, 0.0823529, 1 )
+text = "Power: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Strokes" type="Label" parent="Control"]
+margin_left = 4.68271
+margin_top = 5.0
+margin_right = 76.6827
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.0156863, 0.0117647, 0.0823529, 1 )
+text = "Strokes:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToMainMenu" type="Button" parent="Control"]
+margin_left = 507.878
+margin_top = 2.0
+margin_right = 630.878
+margin_bottom = 22.0
+mouse_filter = 1
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = 40.0
+margin_right = 1715.0
+margin_bottom = 770.0
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/ToMainMenu" to="Control" method="_on_ToMainMenu_pressed"]

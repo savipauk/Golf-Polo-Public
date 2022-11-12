@@ -1,0 +1,186 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Objects/Game/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Game/OuterWalls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Game/Hole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BackgroundGUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Game/PowerLine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Game/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Game/Ice.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Game/Sand.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 1, 0, 1, 1, 0, 0, 1 )
+
+[node name="Level10" type="Node2D"]
+show_behind_parent = true
+
+[node name="BackgroundGUI" parent="." instance=ExtResource( 6 )]
+
+[node name="Hole" parent="." instance=ExtResource( 5 )]
+position = Vector2( 600, 304 )
+z_index = 2
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 48, 72 )
+z_index = 3
+linePath = NodePath("../Line2D")
+holePath = NodePath("../Hole")
+
+[node name="Line2D" parent="." instance=ExtResource( 7 )]
+visible = false
+z_index = 4
+points = PoolVector2Array( 120.5, 231, 120.5, 231 )
+default_color = Color( 0.4, 0.501961, 1, 1 )
+gradient = SubResource( 1 )
+
+[node name="OuterWalls" parent="." instance=ExtResource( 3 )]
+
+[node name="Ice" parent="." instance=ExtResource( 9 )]
+position = Vector2( 432, 280 )
+scale = Vector2( 7, 3 )
+
+[node name="@Ice@605" parent="." instance=ExtResource( 9 )]
+position = Vector2( 232, 152 )
+scale = Vector2( 8, 3 )
+
+[node name="Sand" parent="." instance=ExtResource( 10 )]
+position = Vector2( 272, 248 )
+scale = Vector2( 3, 3 )
+
+[node name="@Sand@606" parent="." instance=ExtResource( 10 )]
+position = Vector2( 408, 184 )
+scale = Vector2( 3, 3 )
+
+[node name="Wall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 104 )
+rotation = 1.5708
+scale = Vector2( 1, 2.5 )
+
+[node name="@Wall@607" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 152 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@608" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 152 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@609" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 152 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@610" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 152 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@611" parent="." instance=ExtResource( 1 )]
+position = Vector2( 296, 152 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@612" parent="." instance=ExtResource( 1 )]
+position = Vector2( 328, 200 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@613" parent="." instance=ExtResource( 1 )]
+position = Vector2( 328, 104 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@614" parent="." instance=ExtResource( 1 )]
+position = Vector2( 328, 152 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@615" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 280 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@616" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 232 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@617" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 280 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@618" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 328 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+
+[node name="@Wall@619" parent="." instance=ExtResource( 1 )]
+position = Vector2( 408, 280 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@620" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 232 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@621" parent="." instance=ExtResource( 1 )]
+position = Vector2( 424, 248 )
+
+[node name="@Wall@622" parent="." instance=ExtResource( 1 )]
+position = Vector2( 432, 264 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@623" parent="." instance=ExtResource( 1 )]
+position = Vector2( 440, 280 )
+
+[node name="@Wall@624" parent="." instance=ExtResource( 1 )]
+position = Vector2( 456, 312 )
+
+[node name="@Wall@625" parent="." instance=ExtResource( 1 )]
+position = Vector2( 448, 296 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@626" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464, 328 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@627" parent="." instance=ExtResource( 1 )]
+position = Vector2( 472, 280 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@628" parent="." instance=ExtResource( 1 )]
+position = Vector2( 496, 280 )
+scale = Vector2( 1, 3 )
+
+[node name="@Wall@629" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 232 )
+rotation = 1.5708
+
+[node name="@Wall@630" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 328 )
+rotation = 1.5708
+
+[node name="@Wall@631" parent="." instance=ExtResource( 1 )]
+position = Vector2( 536, 320 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@632" parent="." instance=ExtResource( 1 )]
+position = Vector2( 536, 240 )
+rotation = 1.5708
+scale = Vector2( 1, 0.5 )
+
+[node name="@Wall@633" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 280 )
+scale = Vector2( 1, 2.5 )
+
+[connection signal="body_entered" from="Hole" to="Player" method="_on_Hole_body_entered"]
+[connection signal="body_entered" from="Ice" to="Player" method="_on_Ice_body_entered"]
+[connection signal="body_exited" from="Ice" to="Player" method="_on_Ice_body_exited"]
+[connection signal="body_entered" from="@Ice@605" to="Player" method="_on_Ice_body_entered"]
+[connection signal="body_exited" from="@Ice@605" to="Player" method="_on_Ice_body_exited"]
+[connection signal="body_entered" from="Sand" to="Player" method="_on_Sand_body_entered"]
+[connection signal="body_exited" from="Sand" to="Player" method="_on_Sand_body_exited"]
+[connection signal="body_entered" from="@Sand@606" to="Player" method="_on_Sand_body_entered"]
+[connection signal="body_exited" from="@Sand@606" to="Player" method="_on_Sand_body_exited"]

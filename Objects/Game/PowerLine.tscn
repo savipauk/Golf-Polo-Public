@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Game/PowerLine.tres" type="Curve" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 1, 0, 1, 1, 0, 0, 1 )
+
+[node name="Line2D" type="Line2D"]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 20.0
+width_curve = ExtResource( 1 )
+default_color = Color( 0.471039, 0.529251, 0.820313, 1 )
+gradient = SubResource( 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
