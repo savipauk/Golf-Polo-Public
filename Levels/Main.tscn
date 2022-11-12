@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Main Menu/LoadCustomLevel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Main Menu/EditCustomLevel.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Main Menu/MainMenuRoot.gd" type="Script" id=3]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Play" type="Button" parent="."]
+anchor_right = 1.0
+margin_left = 192.0
+margin_top = 24.0
+margin_right = 448.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 121.5, 42.5 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayCustomLevel" type="Button" parent="."]
+anchor_right = 1.0
+margin_left = 192.0
+margin_top = 132.0
+margin_right = 448.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 121.5, 42.5 )
+text = "PLAY CUSTOM LEVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelEditor" type="Button" parent="."]
+anchor_right = 1.0
+margin_left = 192.0
+margin_top = 248.0
+margin_right = 448.0
+margin_bottom = 336.0
+rect_pivot_offset = Vector2( 121.5, 42.5 )
+text = "LEVEL EDITOR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer"]
+margin_left = 14.0
+margin_top = 22.0
+margin_right = 620.0
+margin_bottom = 351.0
+window_title = "Open a File"
+mode = 0
+access = 1
+filters = PoolStringArray( "*.json" )
+current_dir = "user://CustomLevels"
+current_file = "my_level.json"
+current_path = "user://CustomLevels/my_level.json"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Control"]
+margin_right = 706.0
+margin_bottom = 415.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewCustom" type="Button" parent="CanvasLayer2/Control"]
+margin_left = 104.0
+margin_top = 112.0
+margin_right = 296.0
+margin_bottom = 190.0
+text = "CREATE NEW CUSTOM LEVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadCustom" type="Button" parent="CanvasLayer2/Control"]
+margin_left = 344.0
+margin_top = 112.0
+margin_right = 536.0
+margin_bottom = 190.0
+text = "LOAD TO EDIT"
+
+[node name="Cancel" type="Button" parent="CanvasLayer2/Control"]
+margin_left = 256.0
+margin_top = 216.0
+margin_right = 384.0
+margin_bottom = 294.0
+text = "CANCEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer3"]
+margin_left = 14.0
+margin_top = 22.0
+margin_right = 620.0
+margin_bottom = 351.0
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 1
+filters = PoolStringArray( "*.json" )
+current_dir = "user://CustomLevels"
+current_file = "my_level.json"
+current_path = "user://CustomLevels/my_level.json"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="PlayCustomLevel" to="." method="_on_PlayCustomLevel_pressed"]
+[connection signal="pressed" from="LevelEditor" to="." method="_on_LevelEditor_pressed"]
+[connection signal="file_selected" from="CanvasLayer/FileDialog" to="CanvasLayer/FileDialog" method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="CanvasLayer2/Control/NewCustom" to="." method="_on_NewCustom_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/LoadCustom" to="." method="_on_LoadCustom_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="file_selected" from="CanvasLayer3/FileDialog" to="CanvasLayer3/FileDialog" method="_on_FileDialog_file_selected"]

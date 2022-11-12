@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://BackgroundGUILevelEditor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/LevelEditor/Selection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Game/OuterWalls.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/ball48.png" type="Texture" id=4]
+[ext_resource path="res://Images/selector.png" type="Texture" id=5]
+[ext_resource path="res://Images/hole64.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[node name="LevelEditor" type="Node2D"]
+
+[node name="OuterWalls" parent="." instance=ExtResource( 3 )]
+
+[node name="BackgroundGUI" parent="." instance=ExtResource( 1 )]
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="Hole" type="Sprite" parent="." groups=["hole"]]
+position = Vector2( 63.0194, 326.82 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="Selection" parent="Hole" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/Selection"]
+shape = SubResource( 1 )
+
+[node name="Selector" type="Sprite" parent="Hole"]
+visible = false
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="PseudoPlayer" type="Sprite" parent="." groups=["player"]]
+position = Vector2( 350, 210 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="Selection" parent="PseudoPlayer" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PseudoPlayer/Selection"]
+shape = SubResource( 1 )
+
+[node name="Selector" type="Sprite" parent="PseudoPlayer"]
+visible = false
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="Walls" type="Node" parent="."]
